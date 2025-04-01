@@ -4,6 +4,7 @@ import com.test.fibotest.features.articles.data.datasources.ArticlesApiService
 import com.test.fibotest.features.articles.data.datasources.ArticlesRemoteDataSource
 import com.test.fibotest.features.articles.data.repositories.ArticlesRepository
 import com.test.fibotest.features.articles.data.repositories.ArticlesRepositoryImpl
+import com.test.fibotest.features.articles.data.repositories.MockArticlesRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

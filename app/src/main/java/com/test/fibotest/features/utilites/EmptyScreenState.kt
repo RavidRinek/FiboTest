@@ -3,10 +3,11 @@ package com.test.fibotest.features.utilites
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Refresh
+import androidx.compose.material.icons.outlined.Build
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -28,15 +29,16 @@ fun EmptyScreenState(text: String) {
 
         Icon(
             modifier = Modifier.size(120.dp),
-            imageVector = Icons.Outlined.Refresh,
+            imageVector = Icons.Outlined.Build,
             contentDescription = null,
-            tint = AppColors.background
+            tint = AppColors.gray100
         )
 
         Text(
-            modifier = Modifier.padding(24.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(24.dp),
             text = text,
-            color = AppColors.onPrimary,
             style = MaterialTheme.typography.bodyMedium,
             textAlign = TextAlign.Center
         )
