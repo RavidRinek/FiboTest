@@ -5,7 +5,6 @@ import com.test.fibotest.features.articles.domain.models.Article
 import com.test.fibotest.features.articles.domain.models.ArticlesNews
 import com.test.fibotest.features.articles.domain.usecases.GetArticlesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import org.orbitmvi.orbit.Container
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.viewmodel.container
@@ -33,7 +32,6 @@ class ArticlesViewModel @Inject constructor(
                                         articles = it.articles
                                     )
                                 ),
-//                                articles = it.articles
                             )
                         }
                     }.onFailure {
@@ -51,7 +49,6 @@ class ArticlesViewModel @Inject constructor(
             is Action.ArticleClicked -> {
                 intent {
                     reduce { state.copy(selectedArticle = action.article) }
-                    delay(2_000)
                     postSideEffect(SideEffect.NavToDetailedArticleScreen(action.article))
                 }
             }

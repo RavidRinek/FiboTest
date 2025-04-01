@@ -43,5 +43,4 @@ class MockArticlesRepositoryImpl : ArticlesRepository {
             )
         )
     }
-
 }

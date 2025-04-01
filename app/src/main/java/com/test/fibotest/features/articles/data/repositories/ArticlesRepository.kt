@@ -6,5 +6,3 @@ interface ArticlesRepository {
 
     suspend fun getArticles(): Result<GetArticlesNewsResponse?>
 }
-
-//8c6b64585c0943a79b16d773cd8adefa

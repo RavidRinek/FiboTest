@@ -1,6 +1,12 @@
 package com.test.fibotest.navigation
 
-object NavigationRoute {
-    const val ARTICLES_NEWS = "route_articles_news"
-    const val ARTICLE_DETAILS = "route_article_details"
-}
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+object ARTICLES_NEWS
+
+@Serializable
+data class ARTICLE_DETAILS(
+    @SerialName("article") val article: String
+)

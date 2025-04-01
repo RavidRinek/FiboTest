@@ -2,7 +2,9 @@ package com.test.fibotest.features.articles.domain.models
 
 import com.test.fibotest.features.articles.data.models.ArticleResponse
 import com.test.fibotest.features.articles.data.models.SourceResponse
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class Article(
     val source: Source,
     val author: String,

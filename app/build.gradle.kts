@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    kotlin("plugin.serialization") version "1.9.20"
 }
 
 android {
@@ -70,6 +71,7 @@ dependencies {
     implementation(libs.orbitmvi)
     implementation(libs.orbitmvicompose)
     implementation(libs.coil.compose)
+    implementation(libs.kotlinx.serialization.json)
 }
 
 kapt {
