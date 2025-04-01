@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -34,6 +36,7 @@ fun ArticlesNewsScreen(navToDetailedArticleScreen: (Article) -> Unit) {
     val state = viewModel.collectAsState()
     val context = LocalContext.current
     val lifecycleEvent = rememberLifecycleEvent()
+    val scrollState = rememberLazyListState()
 
     LaunchedEffect(lifecycleEvent.value) {
         if (lifecycleEvent.value == Lifecycle.Event.ON_RESUME) {
@@ -92,6 +95,7 @@ fun ArticlesNewsScreen(navToDetailedArticleScreen: (Article) -> Unit) {
                 Spacer(modifier = Modifier.height(24.dp))
 
                 ArticlesLazyColumn(
+                    scrollState = scrollState,
                     articles = res.articlesNews.articles,
                     groupClicked = {
                         viewModel.sendAction(

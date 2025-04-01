@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.test.fibotest.features.Second
+import com.test.fibotest.features.articles.presentation.ArticleDetailsScreen
 import com.test.fibotest.features.articles.presentation.ArticlesNewsScreen
 
 @Composable
@@ -14,7 +15,7 @@ fun Navigation() {
         composable(NavigationRoute.ARTICLES_NEWS) {
             ArticlesNewsScreen (
                 navToDetailedArticleScreen = {
-                    navController.navigate(NavigationRoute.SECOND) {
+                    navController.navigate(NavigationRoute.ARTICLE_DETAILS) {
                         /*popUpTo(NavigationRoute.ARTICLES_NEWS) {
                             inclusive = true
                         }*/
@@ -23,8 +24,8 @@ fun Navigation() {
             )
         }
 
-        composable(NavigationRoute.SECOND) {
-            Second()
+        composable(NavigationRoute.ARTICLE_DETAILS) {
+            ArticleDetailsScreen()
         }
     }
 }
